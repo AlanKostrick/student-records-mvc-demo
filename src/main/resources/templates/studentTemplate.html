@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" href="/styles/style.css"></link>
+    <title th:text = "${studentModel.name}"></title>
+</head>
+
+<body>
+<div class="container">
+    <nav>
+        <section>
+            <button>
+                <a th:href="@{/}">Home</a>
+            </button>
+        </section>
+    </nav>
+    <main>
+        <h2 th:text ="${studentModel.name}"></h2>
+        <a th:href="${studentModel.gitHubUrl}">GitHub</a>
+        <section>
+            <button>
+                <a th:href="@{/students}">Back</a>
+            </button>
+        </section>
+    </main>
+    <footer>
+        <small>&copy; wecancodeit 2021</small>
+    </footer>
+</div>
+
+</body>
+</html>

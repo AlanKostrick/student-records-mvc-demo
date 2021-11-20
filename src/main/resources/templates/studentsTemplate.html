@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <link rel="stylesheet" type="text/css" href="/styles/style.css"></link>
+        <title>Student Records</title>
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <section>
+                    <button>
+                        <a th:href="@{/}">Home</a>
+                    </button>
+                </section>
+            </nav>
+            <main>
+                <h1>Student Records</h1>
+                <table>
+                    <tr>
+                        <td>Student Name</td>
+                        <td>Portfolio</td>
+                    </tr>
+                    <tr th:each="student : ${studentsModel}">
+                        <td>
+                            <a th:href="@{/students/{id}(id=${student.id})}"
+                                th:text="${student.name}"></a>
+                        </td>
+                        <td>
+                            <a th:href="${student.gitHubUrl}">GitHub</a>
+                        </td>
+                    </tr>
+                </table>
+            </main>
+            <footer>
+                <small>&copy; wecancodeit 2021</small>
+            </footer>
+        </div>
+    </body>
+</html>
