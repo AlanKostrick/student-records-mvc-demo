@@ -25,11 +25,7 @@ public class StudentController {
     }
 
     @RequestMapping("/students/{id}")
-    public String findOneStudent(@PathVariable Long id, Model model) throws StudentNotFoundException {
-
-        if (studentRepo.findOne(id) == null) {
-            throw new StudentNotFoundException();
-        }
+    public String findOneStudent(@PathVariable Long id, Model model)  {
         model.addAttribute("studentModel", studentRepo.findOne(id));
         return "studentTemplate";
     }
